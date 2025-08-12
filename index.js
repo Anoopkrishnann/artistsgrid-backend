@@ -18,4 +18,5 @@ app.get('/', (req, res) => res.send('Backend is running!'));
 app.use('/api/artists', require('./routes/artists'));
 const authRoutes = require('./routes/auth');
 app.use('/api', authRoutes);
-app.listen(5000, () => console.log('Backend running on port 5000'));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
